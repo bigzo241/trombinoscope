@@ -1,0 +1,11 @@
+.root{
+    -fx-background-color: white;
+}
+
+#info_pane, .button{
+    -fx-background-color: #003EFF;
+}
+
+#info_pane .label, .button{
+    -fx-text-fill: white;
+}
