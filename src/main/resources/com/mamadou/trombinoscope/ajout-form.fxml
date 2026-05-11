@@ -8,12 +8,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="468.0" stylesheets="@ajout-form-style.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mamadou.trombinoscope.AjoutController">
    <children>
       <GridPane vgap="20.0">
         <columnConstraints>
@@ -37,19 +37,28 @@
             <Label text="Email" GridPane.rowIndex="4" />
             <Label text="Numéro de téléphone" GridPane.rowIndex="5" />
             <Label text="Photo de profil" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Hyperlink text="Choisir un fichier" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="nom" GridPane.columnIndex="1" />
+            <TextField fx:id="prenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="poste" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <DatePicker fx:id="date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Hyperlink onAction="#choisirFichier" text="Choisir un fichier">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="imageName" />
+               </children>
+            </HBox>
          </children>
          <VBox.margin>
             <Insets bottom="20.0" />
          </VBox.margin>
       </GridPane>
-      <Button mnemonicParsing="false" text="Enregistrer" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#enregistrer" text="Enregistrer" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>

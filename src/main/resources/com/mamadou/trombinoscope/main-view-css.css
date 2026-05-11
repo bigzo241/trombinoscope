@@ -2,10 +2,12 @@
     -fx-background-color: white;
 }
 
-#info_pane, .button{
+#info_pane, .label{
     -fx-background-color: #003EFF;
+    -fx-text-fill: white;
 }
 
-#info_pane .label, .button{
+.button{
+    -fx-background-color: #003EFF;
     -fx-text-fill: white;
 }

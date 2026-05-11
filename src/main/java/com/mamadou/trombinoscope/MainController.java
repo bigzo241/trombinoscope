@@ -7,8 +7,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
-public class HelloController {
+public class MainController {
 
 
     @FXML
@@ -16,8 +17,12 @@ public class HelloController {
         Stage ajoutForm = new Stage();
         ajoutForm.initModality(Modality.APPLICATION_MODAL);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ajout-form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("ajout-form.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+
+        AjoutController ajoutController = fxmlLoader.getController();
+        ajoutController.setAjoutStage(ajoutForm);
+
         ajoutForm.setTitle("Formulaire d'ajout");
         ajoutForm.setScene(scene);
         ajoutForm.showAndWait();
