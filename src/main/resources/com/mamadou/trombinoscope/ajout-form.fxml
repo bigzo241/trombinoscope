@@ -42,10 +42,10 @@
             <TextField fx:id="poste" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="tel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <DatePicker fx:id="date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="date_naissance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <Hyperlink onAction="#choisirFichier" text="Choisir un fichier">
+                  <Hyperlink fx:id="fileChooserButton" onAction="#choisirFichier" text="Choisir un fichier">
                      <font>
                         <Font size="14.0" />
                      </font>

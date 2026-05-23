@@ -22,9 +22,11 @@ public class MainController {
 
         AjoutController ajoutController = fxmlLoader.getController();
         ajoutController.setAjoutStage(ajoutForm);
+        FieldValidator.errorCounter = 0;
 
         ajoutForm.setTitle("Formulaire d'ajout");
         ajoutForm.setScene(scene);
         ajoutForm.showAndWait();
+        ajoutForm.close();
     }
 }
