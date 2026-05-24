@@ -1,5 +1,6 @@
 package com.mamadou.trombinoscope;
 
+import dataAccess.IndividuDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 
 public class AjoutController {
     FieldValidator validator = new FieldValidator();
+    IndividuDAO individuDAO = new IndividuDAO();
     @FXML
     private TextField nom;
     @FXML
@@ -66,30 +68,36 @@ public class AjoutController {
         if(!oldname.isEmpty() && imageName.getText().isEmpty())
             FieldValidator.errorCounter++;
         else if (oldname.isEmpty() && !imageName.getText().isEmpty()) {
-            FieldValidator.errorCounter--;
+            if (FieldValidator.errorCounter>0)
+                FieldValidator.errorCounter--;
         }
         oldname = imageName.getText();
 
         System.out.println("Nombre d'erreur " + FieldValidator.errorCounter);
 
-        /*System.out.println("Enregistrement");
-        Individu individu = new Individu();
-        individu.setNom(nom.getText());
-        individu.setPrenom(prenom.getText());
-        individu.setDate(date_naissance.getValue());
-        individu.setPoste(poste.getText());
-        individu.setEmail(email.getText());
-        individu.setNumeroTel(Integer.parseInt(tel.getText()));
-        individu.setImagePath(image.getPath());
+        if (FieldValidator.errorCounter==0){
+            System.out.println("Enregistrement");
+            Individu individu = new Individu();
+            individu.setNom(nom.getText());
+            individu.setPrenom(prenom.getText());
+            individu.setDate(date_naissance.getValue());
+            individu.setPoste(poste.getText());
+            individu.setEmail(email.getText());
+            individu.setNumeroTel(Integer.parseInt(tel.getText()));
+            individu.setImagePath(image.getPath());
 
-        System.out.println("Les information suivantes : \n" +
-                "Nom : " + individu.getNom() + "\n" +
-                "Prénom : " + individu.getPrenom() + "\n" +
-                "Date de naissance : " + individu.getDate() + "\n" +
-                "Poste : " + individu.getPoste() + "\n" +
-                "Email : " + individu.getEmail() + "\n" +
-                "Numéro de téléphone : " + individu.getNumeroTel() + "\n" +
-                "Image : " + individu.getImagePath() + "\n");*/
+            individuDAO.create(individu);
+
+            System.out.println("Les information suivantes : \n" +
+                    "Nom : " + individu.getNom() + "\n" +
+                    "Prénom : " + individu.getPrenom() + "\n" +
+                    "Date de naissance : " + individu.getDate() + "\n" +
+                    "Poste : " + individu.getPoste() + "\n" +
+                    "Email : " + individu.getEmail() + "\n" +
+                    "Numéro de téléphone : " + individu.getNumeroTel() + "\n" +
+                    "Image : " + individu.getImagePath() + "\n");
+        }
+
     }
 
     @FXML
