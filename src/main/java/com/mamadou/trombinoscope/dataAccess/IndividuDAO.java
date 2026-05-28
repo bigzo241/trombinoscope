@@ -1,11 +1,13 @@
-package dataAccess;
+package com.mamadou.trombinoscope.dataAccess;
 
-import com.mamadou.trombinoscope.Individu;
+import com.mamadou.trombinoscope.metier.Individu;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IndividuDAO extends DAO<Individu>{
     @Override
@@ -23,6 +25,33 @@ public class IndividuDAO extends DAO<Individu>{
             //e.printStackTrace();
         }
         return individu;
+    }
+
+    @Override
+    public List<Individu> findAll() {
+        System.out.println("Recherche des individus dans la base de données");
+        List<Individu> individus = new ArrayList<>();
+        try {
+            ResultSet result = this.connect
+                    .createStatement().executeQuery(
+                            "SELECT * FROM individu"
+                    );
+
+            while (result.next()){
+                Individu individu = new Individu();
+                individu.setNom(result.getString(1));
+                individu.setPrenom(result.getString(2));
+                individu.setDate(result.getDate(3).toLocalDate());
+                individu.setPoste(result.getString(5));
+                individu.setEmail(result.getString(4));
+                individu.setNumeroTel(result.getInt(6));
+                individu.setImagePath(result.getString(7));
+                individus.add(individu);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return individus;
     }
 
     @Override

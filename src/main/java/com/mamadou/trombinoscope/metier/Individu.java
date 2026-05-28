@@ -1,4 +1,4 @@
-package com.mamadou.trombinoscope;
+package com.mamadou.trombinoscope.metier;
 
 import java.time.LocalDate;
 

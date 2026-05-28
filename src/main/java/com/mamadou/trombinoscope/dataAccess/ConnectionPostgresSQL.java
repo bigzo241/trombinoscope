@@ -1,4 +1,4 @@
-package dataAccess;
+package com.mamadou.trombinoscope.dataAccess;
 
 import javafx.scene.control.Alert;
 

@@ -1,6 +1,8 @@
-package com.mamadou.trombinoscope;
+package com.mamadou.trombinoscope.controller;
 
-import dataAccess.IndividuDAO;
+import com.mamadou.trombinoscope.FieldValidator;
+import com.mamadou.trombinoscope.metier.Individu;
+import com.mamadou.trombinoscope.dataAccess.IndividuDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;

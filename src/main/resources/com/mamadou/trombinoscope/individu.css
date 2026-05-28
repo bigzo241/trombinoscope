@@ -1,0 +1,13 @@
+.individu_card {
+    -fx-background-color: white;
+    -fx-border-radius : 7;
+    -fx-border-color: #003EFF;
+    -fx-border-width: 2;
+}
+
+.label {
+    //-fx-text-fill: red;
+    -fx-font-family: Arial;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}

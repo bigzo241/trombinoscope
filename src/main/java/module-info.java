@@ -6,4 +6,8 @@ module com.mamadou.trombinoscope {
 
     opens com.mamadou.trombinoscope to javafx.fxml;
     exports com.mamadou.trombinoscope;
+    exports com.mamadou.trombinoscope.controller;
+    opens com.mamadou.trombinoscope.controller to javafx.fxml;
+    exports com.mamadou.trombinoscope.metier;
+    opens com.mamadou.trombinoscope.metier to javafx.fxml;
 }
