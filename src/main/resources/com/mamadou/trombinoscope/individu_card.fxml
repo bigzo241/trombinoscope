@@ -15,7 +15,7 @@
             <Image url="@../../../../../../../../Pictures/Moi/20230915_195235.jpg" />
          </image>
       </ImageView>
-      <GridPane HBox.hgrow="ALWAYS">
+      <GridPane gridLinesVisible="true" HBox.hgrow="ALWAYS">
         <columnConstraints>
           <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="212.66668701171875" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="117.99997965494788" />

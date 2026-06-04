@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="953b1cc9-0aa1-45e0-9b57-79e4113a23fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/individu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/AjoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/Individu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/metier/Individu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ConnectionPostgresSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/ConnectionPostgresSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/IndividuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/IndividuDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/ajout-form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/ajout-form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/individu_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/individu_card.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

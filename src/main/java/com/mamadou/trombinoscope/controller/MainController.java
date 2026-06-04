@@ -9,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,11 +34,11 @@ public class MainController {
         IndividuDAO individuDAO = new IndividuDAO();
         List<Individu> individus = individuDAO.findAll();
         if (!individus.isEmpty()) {
-            Button button = (Button) flowPane.getChildren().removeLast();
-            sectionHautVbox.getChildren().add(button);
+            if (flowPane.getChildren().removeLast() instanceof Button button){
+                sectionHautVbox.getChildren().add(button);
+            }
             flowPane.getStylesheets().add(String.valueOf(this.getClass().getResource("/com/mamadou/trombinoscope/individu.css")));
-            //flowPane.setAlignment(Pos.TOP_LEFT);
-
+            flowPane.getChildren().clear();
             for (Individu individu : individus) {
                 HBox hBox = new HBox(10);
                 hBox.setPrefWidth(550.0);
@@ -101,11 +100,11 @@ public class MainController {
 
         AjoutController ajoutController = fxmlLoader.getController();
         ajoutController.setAjoutStage(ajoutForm);
+        ajoutController.setMainStage(this);
         FieldValidator.errorCounter = 0;
 
         ajoutForm.setTitle("Formulaire d'ajout");
         ajoutForm.setScene(scene);
         ajoutForm.showAndWait();
-        ajoutForm.close();
     }
 }

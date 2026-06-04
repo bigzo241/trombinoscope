@@ -33,10 +33,15 @@ public class AjoutController {
     private Hyperlink fileChooserButton;
     private File image;
     private Stage ajoutStage;
+    private MainController mainController;
     private String oldname = "Invalide";
 
     public void setAjoutStage(Stage stage){
         this.ajoutStage = stage;
+    }
+
+    public void setMainStage(MainController controller){
+        this.mainController = controller;
     }
 
     @FXML
@@ -98,8 +103,13 @@ public class AjoutController {
                     "Email : " + individu.getEmail() + "\n" +
                     "Numéro de téléphone : " + individu.getNumeroTel() + "\n" +
                     "Image : " + individu.getImagePath() + "\n");
+            ajoutStage.close();
+            mainController.initialize();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Veuillez saisir des informations correctes s'il vous plait");
+            alert.showAndWait();
         }
-
     }
 
     @FXML
