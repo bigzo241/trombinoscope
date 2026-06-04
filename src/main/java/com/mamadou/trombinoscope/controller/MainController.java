@@ -26,6 +26,8 @@ public class MainController {
     @FXML
     private VBox sectionHautVbox;
     @FXML
+    private Label nbrIndividu;
+    @FXML
     private FlowPane flowPane;
 
     @FXML
@@ -33,6 +35,7 @@ public class MainController {
 
         IndividuDAO individuDAO = new IndividuDAO();
         List<Individu> individus = individuDAO.findAll();
+        nbrIndividu.setText(String.valueOf(individus.size()));
         if (!individus.isEmpty()) {
             if (flowPane.getChildren().removeLast() instanceof Button button){
                 sectionHautVbox.getChildren().add(button);

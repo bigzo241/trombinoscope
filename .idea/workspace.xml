@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="953b1cc9-0aa1-45e0-9b57-79e4113a23fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/individu_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/individu_card.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mamadou/trombinoscope/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

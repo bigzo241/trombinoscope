@@ -36,7 +36,7 @@
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label text="0">
+                        <Label fx:id="nbrIndividu" text="0">
                            <font>
                               <Font size="17.0" />
                            </font>
