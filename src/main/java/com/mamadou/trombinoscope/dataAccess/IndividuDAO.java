@@ -42,8 +42,8 @@ public class IndividuDAO extends DAO<Individu>{
                 individu.setNom(result.getString(1));
                 individu.setPrenom(result.getString(2));
                 individu.setDate(result.getDate(3).toLocalDate());
-                individu.setPoste(result.getString(5));
-                individu.setEmail(result.getString(4));
+                individu.setPoste(result.getString(4));
+                individu.setEmail(result.getString(5));
                 individu.setNumeroTel(result.getInt(6));
                 individu.setImagePath(result.getString(7));
                 individus.add(individu);
@@ -70,7 +70,7 @@ public class IndividuDAO extends DAO<Individu>{
             else
                 System.out.println("Echec de l'insertion");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -81,6 +81,16 @@ public class IndividuDAO extends DAO<Individu>{
 
     @Override
     public void delete(Individu individu) {
-
+        System.out.println("Individu à supprimer : " + individu.getEmail());
+        try (PreparedStatement preStat = this.connect.prepareStatement("delete from individu where email = ?")){
+            preStat.setString(1, individu.getEmail());
+            int t = preStat.executeUpdate();
+            if(t==1)
+                System.out.println("Suppression de l'enregistrement réussie");
+            else
+                System.out.println("Echec de la suppression");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

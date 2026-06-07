@@ -9,7 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -32,7 +34,6 @@ public class MainController {
 
     @FXML
     public void initialize(){
-
         IndividuDAO individuDAO = new IndividuDAO();
         List<Individu> individus = individuDAO.findAll();
         nbrIndividu.setText(String.valueOf(individus.size()));
@@ -57,7 +58,6 @@ public class MainController {
                 ImageView imageView = new ImageView(image);
 
                 GridPane gridPane = new GridPane();
-                //gridPane.setGridLinesVisible(true);
                 ColumnConstraints cc1 = new ColumnConstraints();
                 ColumnConstraints cc2 = new ColumnConstraints();
                 cc1.setHgrow(Priority.SOMETIMES);
@@ -87,10 +87,33 @@ public class MainController {
                 hBox.setAlignment(Pos.CENTER);
                 hBox.setFillHeight(true);
                 HBox.setHgrow(gridPane, Priority.ALWAYS);
+
+                ContextMenu contextMenu = new ContextMenu();
+                MenuItem menuItem1 = new MenuItem("Modifier");
+                menuItem1.setOnAction(e -> individuDAO.update(individu));
+                MenuItem menuItem2 = new MenuItem("Supprimer");
+                menuItem2.setOnAction(e -> {
+                    individuDAO.delete(individu);
+                    this.initialize();
+                });
+                contextMenu.getItems().addAll(menuItem1, menuItem2);
+                hBox.setOnContextMenuRequested(event -> {
+                    // Show the menu at the exact mouse cursor coordinates on screen
+                    contextMenu.show(hBox, event.getScreenX(), event.getScreenY());
+                    // Consume the event to prevent parent containers from handling it too
+                    event.consume();
+                });
+
+                // 5. Hide the context menu if the user left-clicks the node
+                hBox.setOnMouseClicked(event -> {
+                    if (contextMenu.isShowing()) {
+                        contextMenu.hide();
+                    }
+                });
+
                 flowPane.getChildren().add(hBox);
             }
         }
-
     }
 
     @FXML
