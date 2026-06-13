@@ -3,7 +3,7 @@ package com.mamadou.trombinoscope.dataAccess;
 import java.sql.Connection;
 import java.util.List;
 
-public abstract class DAO<T> {
+public abstract class DAO<T, V> {
     public Connection connect = ConnectionPostgresSQL.getInstance();
 
     /**
@@ -30,7 +30,7 @@ public abstract class DAO<T> {
      * Permet de mettre à jour les données d'une entrée dans la base
      * @param obj
      */
-    public abstract T update(T obj);
+    public abstract void update(T obj, V key);
 
     /**
      * Permet la suppression d'une entrée de la base

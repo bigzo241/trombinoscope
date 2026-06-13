@@ -14,6 +14,8 @@ import java.time.LocalDate;
 public class AjoutController {
     FieldValidator validator = new FieldValidator();
     IndividuDAO individuDAO = new IndividuDAO();
+    private boolean update = false;
+    private String key = null;
     @FXML
     private TextField nom;
     @FXML
@@ -83,7 +85,7 @@ public class AjoutController {
         System.out.println("Nombre d'erreur " + FieldValidator.errorCounter);
 
         if (FieldValidator.errorCounter==0){
-            System.out.println("Enregistrement");
+            System.out.println("Enregistrement/Mise à jour");
             Individu individu = new Individu();
             individu.setNom(nom.getText());
             individu.setPrenom(prenom.getText());
@@ -93,7 +95,10 @@ public class AjoutController {
             individu.setNumeroTel(Integer.parseInt(tel.getText()));
             individu.setImagePath(image.getPath());
 
-            individuDAO.create(individu);
+            if (update)
+                individuDAO.update(individu, key);
+            else
+                individuDAO.create(individu);
 
             System.out.println("Les information suivantes : \n" +
                     "Nom : " + individu.getNom() + "\n" +
@@ -131,4 +136,35 @@ public class AjoutController {
         }
     }
 
+    public void setNom(String nom) {
+        this.nom.setText(nom);
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom.setText(prenom);
+    }
+
+    public void setDate_naissance(LocalDate date_naissance) {
+        this.date_naissance.setValue(date_naissance);
+    }
+
+    public void setPoste(String poste) {
+        this.poste.setText(poste);
+    }
+
+    public void setEmail(String email) {
+        this.email.setText(email);
+    }
+
+    public void setTel(int tel) {
+        this.tel.setText(String.valueOf(tel));
+    }
+
+    public void setUpdate(boolean bool){
+        this.update = bool;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

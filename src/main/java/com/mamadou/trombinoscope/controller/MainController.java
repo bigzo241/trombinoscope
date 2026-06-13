@@ -8,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -90,7 +87,9 @@ public class MainController {
 
                 ContextMenu contextMenu = new ContextMenu();
                 MenuItem menuItem1 = new MenuItem("Modifier");
-                menuItem1.setOnAction(e -> individuDAO.update(individu));
+                menuItem1.setOnAction(e -> {
+                    ajouterIndividuForm(individu);
+                });
                 MenuItem menuItem2 = new MenuItem("Supprimer");
                 menuItem2.setOnAction(e -> {
                     individuDAO.delete(individu);
@@ -123,10 +122,39 @@ public class MainController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("ajout-form.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
         AjoutController ajoutController = fxmlLoader.getController();
         ajoutController.setAjoutStage(ajoutForm);
         ajoutController.setMainStage(this);
+        FieldValidator.errorCounter = 0;
+
+        ajoutForm.setTitle("Formulaire d'ajout");
+        ajoutForm.setScene(scene);
+        ajoutForm.showAndWait();
+    }
+
+    protected void ajouterIndividuForm(Individu individu) {
+        Stage ajoutForm = new Stage();
+        ajoutForm.initModality(Modality.APPLICATION_MODAL);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("ajout-form.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        AjoutController ajoutController = fxmlLoader.getController();
+        ajoutController.setNom(individu.getNom());
+        ajoutController.setPrenom(individu.getPrenom());
+        ajoutController.setDate_naissance(individu.getDate());
+        ajoutController.setPoste(individu.getPoste());
+        ajoutController.setEmail(individu.getEmail());
+        ajoutController.setTel(individu.getNumeroTel());
+        ajoutController.setAjoutStage(ajoutForm);
+        ajoutController.setMainStage(this);
+        ajoutController.setUpdate(true);
+        ajoutController.setKey(individu.getEmail());
         FieldValidator.errorCounter = 0;
 
         ajoutForm.setTitle("Formulaire d'ajout");
