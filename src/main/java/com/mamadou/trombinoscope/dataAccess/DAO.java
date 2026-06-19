@@ -11,7 +11,7 @@ public abstract class DAO<T, V> {
      * @param id
      * @return T l'objet démandé
      */
-    public abstract T find(long id);
+    public abstract T find(String id);
 
     /**
      * Permet de récupérer tous les objets

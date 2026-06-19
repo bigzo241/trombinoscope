@@ -11,20 +11,121 @@ import java.util.List;
 
 public class IndividuDAO extends DAO<Individu, String>{
     @Override
-    public Individu find(long id) {
-        Individu individu = new Individu();
-        try {
-            ResultSet result = this.connect
-                    .createStatement().executeQuery(
-                            "SELECT * FROM individu WHERE id = " + id
-                    );
-            if(result.first())
+    public Individu find(String id) {
+        System.out.println("Recherche par email");
+        Individu individu = null;
+        try (PreparedStatement preStat = this.connect.prepareStatement("SELECT * FROM individu WHERE email = ?")){
+            preStat.setString(1, id);
+            ResultSet result = preStat.executeQuery();
+            while (result.next()){
                 individu = new Individu();
+                individu.setNom(result.getString(1));
+                individu.setPrenom(result.getString(2));
+                individu.setDate(result.getDate(3).toLocalDate());
+                individu.setPoste(result.getString(4));
+                individu.setEmail(result.getString(5));
+                individu.setNumeroTel(result.getInt(6));
+                individu.setImagePath(result.getString(7));
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             //e.printStackTrace();
         }
         return individu;
+    }
+
+    public List<Individu> findByNom(String nom) {
+        System.out.println("Recherche par nom");
+        List<Individu> individus = new ArrayList<>();
+        try (PreparedStatement preStat = this.connect.prepareStatement("SELECT * FROM individu WHERE nom = ?")){
+            preStat.setString(1, nom);
+            ResultSet result = preStat.executeQuery();
+            while (result.next()){
+                Individu individu = new Individu();
+                individu.setNom(result.getString(1));
+                individu.setPrenom(result.getString(2));
+                individu.setDate(result.getDate(3).toLocalDate());
+                individu.setPoste(result.getString(4));
+                individu.setEmail(result.getString(5));
+                individu.setNumeroTel(result.getInt(6));
+                individu.setImagePath(result.getString(7));
+                individus.add(individu);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return individus;
+    }
+
+    public List<Individu> findByPrenom(String prenom) {
+        System.out.println("Recherche par prenom");
+        List<Individu> individus = new ArrayList<>();
+        try (PreparedStatement preStat = this.connect.prepareStatement("SELECT * FROM individu WHERE prenom = ?")){
+            preStat.setString(1, prenom);
+            ResultSet result = preStat.executeQuery();
+            while (result.next()){
+                Individu individu = new Individu();
+                individu.setNom(result.getString(1));
+                individu.setPrenom(result.getString(2));
+                individu.setDate(result.getDate(3).toLocalDate());
+                individu.setPoste(result.getString(4));
+                individu.setEmail(result.getString(5));
+                individu.setNumeroTel(result.getInt(6));
+                individu.setImagePath(result.getString(7));
+                individus.add(individu);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return individus;
+    }
+
+    public List<Individu> findByPoste(String poste) {
+        System.out.println("Recherche par poste");
+        List<Individu> individus = new ArrayList<>();
+        try (PreparedStatement preStat = this.connect.prepareStatement("SELECT * FROM individu WHERE poste = ?")){
+            preStat.setString(1, poste);
+            ResultSet result = preStat.executeQuery();
+            while (result.next()){
+                Individu individu = new Individu();
+                individu.setNom(result.getString(1));
+                individu.setPrenom(result.getString(2));
+                individu.setDate(result.getDate(3).toLocalDate());
+                individu.setPoste(result.getString(4));
+                individu.setEmail(result.getString(5));
+                individu.setNumeroTel(result.getInt(6));
+                individu.setImagePath(result.getString(7));
+                individus.add(individu);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return individus;
+    }
+
+    public List<Individu> findByNumero(String numero) {
+        System.out.println("Recherche par numéro de téléphone");
+        List<Individu> individus = new ArrayList<>();
+        try (PreparedStatement preStat = this.connect.prepareStatement("SELECT * FROM individu WHERE numero_tel = ?")){
+            preStat.setInt(1, Integer.parseInt(numero));
+            ResultSet result = preStat.executeQuery();
+            while (result.next()){
+                Individu individu = new Individu();
+                individu.setNom(result.getString(1));
+                individu.setPrenom(result.getString(2));
+                individu.setDate(result.getDate(3).toLocalDate());
+                individu.setPoste(result.getString(4));
+                individu.setEmail(result.getString(5));
+                individu.setNumeroTel(result.getInt(6));
+                individu.setImagePath(result.getString(7));
+                individus.add(individu);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
+        }
+        return individus;
     }
 
     @Override

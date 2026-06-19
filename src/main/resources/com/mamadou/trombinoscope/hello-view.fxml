@@ -45,12 +45,12 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="351.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <TextField prefHeight="33.0" prefWidth="213.0">
+                        <TextField fx:id="barreRecherche" prefHeight="33.0" prefWidth="213.0" promptText="Nom, prenom, email, poste, etc.">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="127.0" text="Rechercher">
+                        <Button mnemonicParsing="false" onAction="#onRechercher" prefHeight="33.0" prefWidth="127.0" text="Rechercher">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
