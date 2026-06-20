@@ -45,7 +45,7 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="351.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <TextField fx:id="barreRecherche" prefHeight="33.0" prefWidth="213.0" promptText="Nom, prenom, email, poste, etc.">
+                        <TextField fx:id="barreRecherche" onAction="#onRechercher" prefHeight="33.0" prefWidth="213.0" promptText="Nom, prenom, email, poste, etc.">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>
