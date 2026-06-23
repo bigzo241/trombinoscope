@@ -20,6 +20,8 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +80,7 @@ public class MainController {
                 rc6.setVgrow(Priority.SOMETIMES);
                 gridPane.addRow(0, new Label("Nom :"), new Label(individu.getNom()));
                 gridPane.addRow(1, new Label("Prénom :"), new Label(individu.getPrenom()));
-                gridPane.addRow(2, new Label("Date de naissance :"), new Label(individu.getDate().toString()));
+                gridPane.addRow(2, new Label("Date de naissance :"), new Label(individu.getDate().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT))));
                 gridPane.addRow(3, new Label("Poste :"), new Label(individu.getPoste()));
                 gridPane.addRow(4, new Label("Email :"), new Label(individu.getEmail()));
                 gridPane.addRow(5, new Label("Numéro de téléphone : "), new Label(String.valueOf(individu.getNumeroTel())));
@@ -176,21 +178,23 @@ public class MainController {
             resultats6 = individuDAO.findByNumero(barreRecherche.getText().trim());
         }
 
+        Button button = new Button("Retour");
+        button.setStyle("-fx-background-color: #003EFF;"
+                + "-fx-text-fill: white;"
+                + "-fx-font-size: 18;"
+                + "-fx-font-family: Arial;");
+        button.setOnAction(this::handle);
+
         flowPane.getChildren().clear();
 
         if (resultats1.isEmpty() && resultats2.isEmpty() && resultats4.isEmpty() && resultats5 == null && resultats6.isEmpty()) {
             Text text = new Text("Aucun résultats");
             text.setStyle("-fx-font-size: 18;"
                     + "-fx-font-family: Arial;");
-            Button button = new Button("Retour");
-            button.setStyle("-fx-background-color: #003EFF;"
-                    + "-fx-text-fill: white;"
-                    + "-fx-font-size: 18;"
-                    + "-fx-font-family: Arial;");
-            button.setOnAction(this::handle);
 
             flowPane.getChildren().addAll(text, button, new Label(" "));
         } else {
+            flowPane.getChildren().addAll(button, new Label(" "));
             for (Individu individu : resultats1) {
                 flowPane.getChildren().addAll(componetIndividuMaker(individu));
             }
@@ -243,7 +247,7 @@ public class MainController {
         rc6.setVgrow(Priority.SOMETIMES);
         gridPane.addRow(0, new Label("Nom :"), new Label(individu.getNom()));
         gridPane.addRow(1, new Label("Prénom :"), new Label(individu.getPrenom()));
-        gridPane.addRow(2, new Label("Date de naissance :"), new Label(individu.getDate().toString()));
+        gridPane.addRow(2, new Label("Date de naissance :"), new Label(individu.getDate().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT))));
         gridPane.addRow(3, new Label("Poste :"), new Label(individu.getPoste()));
         gridPane.addRow(4, new Label("Email :"), new Label(individu.getEmail()));
         gridPane.addRow(5, new Label("Numéro de téléphone : "), new Label(String.valueOf(individu.getNumeroTel())));
