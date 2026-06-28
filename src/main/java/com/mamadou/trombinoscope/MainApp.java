@@ -9,9 +9,14 @@ import java.io.IOException;
 
 public class MainApp extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         stage.setTitle("Trombinoscope");
         stage.setScene(scene);
         stage.show();

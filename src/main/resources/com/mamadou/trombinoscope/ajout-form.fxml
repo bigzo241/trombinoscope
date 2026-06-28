@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="468.0" stylesheets="@ajout-form-style.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mamadou.trombinoscope.controller.AjoutController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="468.0" stylesheets="@ajout-form-style.css" xmlns="http://javafx.com/javafx/21.0.11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mamadou.trombinoscope.controller.AjoutController">
    <children>
       <GridPane vgap="20.0">
         <columnConstraints>
