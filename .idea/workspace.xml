@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="953b1cc9-0aa1-45e0-9b57-79e4113a23fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trombinoscope-1.0.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/FieldValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/service/FieldValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/AjoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/ConnectionMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/ConnectionPostgreSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mamadou/trombinoscope/dataAccess/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
