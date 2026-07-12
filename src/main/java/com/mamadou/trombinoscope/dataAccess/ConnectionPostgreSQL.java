@@ -6,19 +6,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionMySQL {
+public class ConnectionPostgreSQL {
     /**
      * URL de connexion
      */
-    private static final String url = "jdbc:mysql://localhost:3306/trombinoscope?enabledTLSProtocols=TLSv1.2";
+    private static final String url = "jdbc:postgresql://localhost:5432/trombinoscope";
     /**
      * Nom du user
      */
-    private static final String user = "root";
+    private static final String user = "postgres";
     /**
      * Mot de passe du user
      */
-    private static final String passwd = "root@MySQL#700";
+    private static final String passwd = "admin@user#700?";
     /**
      * Objet Connexion
      */
@@ -26,7 +26,7 @@ public class ConnectionMySQL {
     /**
      * Méthode qui va nous retourner notre instance
      * et la créer si elle n'existe pas...
-     * @return
+     * @return Objet Connection representant la connexion à la base de données
      */
     public static Connection getInstance(){
         // connexion à la base de données

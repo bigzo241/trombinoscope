@@ -1,6 +1,6 @@
 package com.mamadou.trombinoscope.controller;
 
-import com.mamadou.trombinoscope.FieldValidator;
+import com.mamadou.trombinoscope.service.FieldValidator;
 import com.mamadou.trombinoscope.MainApp;
 import com.mamadou.trombinoscope.dataAccess.IndividuDAO;
 import com.mamadou.trombinoscope.metier.Individu;

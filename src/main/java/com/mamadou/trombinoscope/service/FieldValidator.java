@@ -1,4 +1,4 @@
-package com.mamadou.trombinoscope;
+package com.mamadou.trombinoscope.service;
 
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
